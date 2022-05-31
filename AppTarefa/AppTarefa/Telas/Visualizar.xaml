@@ -30,17 +30,23 @@
                     </StackLayout.GestureRecognizers>
                     <Image Source="back.png"/>
                 </StackLayout>
-                <Label Text="Comprar café" Grid.Column="1" 
-                       FontSize="20" FontFamily="MontserratBold" 
-                       TextColor="Black" Margin="0, 20, 0, 0" />
+                
+                <Label Text="{Binding Nome}" Grid.Column="1" Margin="0, 20, 0, 0" Style="{StaticResource TituloVisualizar}"/>
             </Grid>
             <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
                 <StackLayout>
-                    <Label Text="03/03/2020" FontSize="16" FontFamily="MontserratRegular" TextColor="Black" />
-                    <Label Text="8:00 - 8:30" FontSize="16" FontFamily="MontserratRegular" TextColor="#939393" />
-                    <Label Text="Nota" FontSize="20" FontFamily="MontserratBold" TextColor="Black" />
-                    <Label Text="Café Santa Clara - comprar 4 unidades se valor menor que 8 reais." 
-                           FontSize="14" FontFamily="MontserratRegular" TextColor="Black" />
+                    <Label Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}" Style="{StaticResource TituloCampo}" />
+                    <Label Style="{StaticResource ValorCampo}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" />
+                                <Span Text=" - " />
+                                <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label x:Name="LblTituloNota" Text="Nota" Style="{StaticResource TituloVisualizar}" />
+                    <Label Text="{Binding Nota}" FontSize="14" Style="{StaticResource TituloCampo}" />
                 </StackLayout>
             </Frame>
         </Grid>

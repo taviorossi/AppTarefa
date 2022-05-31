@@ -16,7 +16,7 @@
     </intent>
   </queries>
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:label="AppTarefa.Android" android:theme="@style/MainTheme">
-    <activity android:name="crc64f07c1920e3ef075e.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:theme="@style/MainTheme" />
+    <activity android:name="crc64f07c1920e3ef075e.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:screenOrientation="portrait" android:theme="@style/MainTheme" />
     <activity android:name="crc64f07c1920e3ef075e.SplashActivity" android:configChanges="orientation|screenSize" android:exported="true" android:icon="@mipmap/ic_launcher" android:label="App - Tarefa" android:theme="@style/MainTheme.Splash">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
