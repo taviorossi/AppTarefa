@@ -14,10 +14,17 @@ namespace AppTarefa.Telas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cadastrar : ContentPage
     {
+        public string Prioridade;
         public Cadastrar()
         {
             InitializeComponent();
             LblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            RBNormal.IsChecked = true;
+
+            if(Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+            {
+                HorarioInicial.Unfocused += HorarioInicial_Unfocused;
+            }
         }
 
         private void FecharModal(object sender, EventArgs e)
@@ -34,6 +41,7 @@ namespace AppTarefa.Telas
             tarefa.HorarioInicial = HorarioInicial.Time;
             tarefa.HorarioFinal = HorarioFinal.Time;
             tarefa.Finalizada = false;
+            tarefa.Prioridade = this.Prioridade;
 
             //TODO - Validação dos dados
             if (await ValidacaoAsync(tarefa))
@@ -95,6 +103,11 @@ namespace AppTarefa.Telas
         private void HorarioFinal_Unfocused(object sender, FocusEventArgs e)
         {
             LblHorarioFinal.Text = ((TimePicker)sender).Time.ToString(@"hh\:mm");
+        }
+
+        private void RBBaixa_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            Prioridade = (string)((RadioButton)sender).Content;
         }
     }
 }

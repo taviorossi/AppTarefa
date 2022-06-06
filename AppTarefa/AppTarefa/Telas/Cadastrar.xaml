@@ -56,13 +56,17 @@
                             </Label>
                         </StackLayout>
                     </Frame>
-                    <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
+                    <Frame Visual="Material" Padding="0" CornerRadius="0" BorderColor="#EDEDED">
                         <Entry x:Name="Nome" Style="{StaticResource EntradaCampoEntry}" Placeholder="Tarefa" />
                     </Frame>
-                    <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
+                    <Frame Visual="Material" Padding="0" CornerRadius="0" BorderColor="#EDEDED">
                         <Editor x:Name="Nota" Style="{StaticResource EntradaCampoEditor}" Placeholder="Nota" />
                     </Frame>
-
+                    <Grid ColumnDefinitions="*,*,*">
+                        <RadioButton x:Name="RBBaixa" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="0" TextColor="{StaticResource PrioridadeBaixa}" Content="Baixa" />
+                        <RadioButton x:Name="RBNormal" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="1" Content="Normal" TextColor="{StaticResource PrioridadeNormal}" />
+                        <RadioButton x:Name="RBAlta" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="2" Content="Alta" TextColor="{StaticResource PrioridadeAlta}" />
+                    </Grid>
                     <Button Text="Adicionar" Clicked="SalvarTarefa" Style="{StaticResource Botao}" />
                 </StackLayout>
             </Frame>

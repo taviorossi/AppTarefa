@@ -4,7 +4,13 @@
              x:Class="AppTarefa.Telas.Visualizar"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#F5F6FA"
+             xmlns:conversor="clr-namespace:AppTarefa.Conversor"
              >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conversor:PrioridadeConversor x:Key="Prioridade" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.ColumnDefinitions>
@@ -47,6 +53,10 @@
                     </Label>
                     <Label x:Name="LblTituloNota" Text="Nota" Style="{StaticResource TituloVisualizar}" />
                     <Label Text="{Binding Nota}" FontSize="14" Style="{StaticResource TituloCampo}" />
+                    <StackLayout Orientation="Horizontal">
+                        <Ellipse WidthRequest="15" HeightRequest="15" VerticalOptions="Center" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}" />
+                        <Label Text="{Binding Prioridade}" Style="{StaticResource TituloCampo}" />
+                    </StackLayout>
                 </StackLayout>
             </Frame>
         </Grid>

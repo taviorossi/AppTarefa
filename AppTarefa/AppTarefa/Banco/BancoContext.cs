@@ -12,7 +12,8 @@ namespace AppTarefa.Banco
 
        public BancoContext()
         {
-            Database.EnsureCreated();
+            Database.Migrate();
+            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

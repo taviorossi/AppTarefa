@@ -8,6 +8,10 @@
             <Color x:Key="Azul">#4043C9</Color>
             <Color x:Key="CinzaClaro">#939393</Color>
 
+            <Color x:Key="PrioridadeBaixa">#00ABFF</Color>
+            <Color x:Key="PrioridadeNormal">#E0E00C</Color>
+            <Color x:Key="PrioridadeAlta">#FF6969</Color>
+
             <Style TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="HasShadow" Value="False" />
